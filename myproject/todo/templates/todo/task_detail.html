@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="task-detail">
+    <div class="task">
+      <h2>{{ task.title }}</h2>
+      <p>{{ task.description }}</p>
+      <p>{{ task.status }}</p>
+    </div>
+</div>
+<br/>
+<a href="{% url 'todo:update' slug=task.slug %}"><button>Update</button></a>
+<a href="{% url 'todo:delete' slug=task.slug %}"><button>Delete</button></a>
+{% endblock %}

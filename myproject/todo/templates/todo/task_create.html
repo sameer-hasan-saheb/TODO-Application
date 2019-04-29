@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <div class="create-task">
+        <h2>Create a Task</h2>
+        <form class="site-form" action="{% url 'todo:create' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Create">
+        </form>
+    </div>
+{% endblock %}

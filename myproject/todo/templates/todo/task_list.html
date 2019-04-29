@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+    <h1>TODO List</h1>
+    <div class="tasks">
+    <br/>
+    {% for task in tasks %}
+        <div class="task">
+            <h2><a href="{% url 'todo:detail' slug=task.slug %}">{{ task.title }}</a></h2>
+        </div>
+    {% endfor %}
+    </div>
+    <br/>
+    <a href="{% url 'todo:create' %}"><button>Create New</button></a>
+{% endblock %}
